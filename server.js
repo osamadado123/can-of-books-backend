@@ -15,11 +15,11 @@ const PORT = process.env.PORT || 3010;
 mongoose.connect("mongodb://osama:hXEae85xelIXfseJ@ac-fn5umgg-shard-00-00.ewbdfn4.mongodb.net:27017,ac-fn5umgg-shard-00-01.ewbdfn4.mongodb.net:27017,ac-fn5umgg-shard-00-02.ewbdfn4.mongodb.net:27017/?ssl=true&replicaSet=atlas-n400kc-shard-0&authSource=admin&retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 
-server.get("/", homeHandler);
-server.get("/books", booksHandler);
-server.post("/books", addBooksHandler);
-server.delete("/books/:id", deleteBooksHandler);
-server.get("*", defaultHandler);
+server.get('/', homeHandler);
+server.get('/books', booksHandler);
+server.post('/books', addBooksHandler);
+server.delete('/books/:id', deleteBooksHandler);
+server.get('*', defaultHandler);
 
 const booksSchema = new mongoose.Schema({
   title: String,
