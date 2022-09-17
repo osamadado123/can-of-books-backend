@@ -12,8 +12,9 @@ server.use(express.json());
 
 const PORT = process.env.PORT ;
 
-mongoose.connect("mongodb://osama:hXEae85xelIXfseJ@ac-fn5umgg-shard-00-00.ewbdfn4.mongodb.net:27017,ac-fn5umgg-shard-00-01.ewbdfn4.mongodb.net:27017,ac-fn5umgg-shard-00-02.ewbdfn4.mongodb.net:27017/?ssl=true&replicaSet=atlas-n400kc-shard-0&authSource=admin&retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://osama:1234@ac-ukbfrna-shard-00-00.ut4lql7.mongodb.net:27017,ac-ukbfrna-shard-00-01.ut4lql7.mongodb.net:27017,ac-ukbfrna-shard-00-02.ut4lql7.mongodb.net:27017/?ssl=true&replicaSet=atlas-14lowc-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
+mongoose.connect('mongodb://omar:1234@ac-gz7wr2i-shard-00-00.jeyohs9.mongodb.net:27017,ac-gz7wr2i-shard-00-01.jeyohs9.mongodb.net:27017,ac-gz7wr2i-shard-00-02.jeyohs9.mongodb.net:27017/?ssl=true&replicaSet=atlas-z04wln-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 server.get('/', homeHandler);
 server.get('/books', booksHandler);
@@ -63,9 +64,9 @@ async function seedData() {
   await secondBook.save();
   await thirdBook.save();
 }
-//  seedData();
+  // seedData();
 function homeHandler(req, res) {
-  res.json("Hi from the home route");
+  res.send("Hi from the home route");
 }
 
 function booksHandler(req, res) {
