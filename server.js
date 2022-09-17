@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 server.use(cors());
 server.use(express.json());
 
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT ;
 
 mongoose.connect("mongodb://osama:hXEae85xelIXfseJ@ac-fn5umgg-shard-00-00.ewbdfn4.mongodb.net:27017,ac-fn5umgg-shard-00-01.ewbdfn4.mongodb.net:27017,ac-fn5umgg-shard-00-02.ewbdfn4.mongodb.net:27017/?ssl=true&replicaSet=atlas-n400kc-shard-0&authSource=admin&retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
